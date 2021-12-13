@@ -8,11 +8,14 @@ namespace NBS_Custom_JS_And_CSS_Helper
     {
 
         // Create global variables to hold the names of the servers we will be working with
-        public static string ServerName1 = "";
-        public static string ServerName2 = "";
-        public static string ServerName3 = "";
-        public static string ServerName4 = "";
+ 
 
+        /* DEV SERVER NAMES */
+        // Note that there are a ton of backslashes because you need two to insert 1
+        public static string DevServer1 = "\\\\10.0.5.71\\common\\custom";
+        public static string DevServer2 = "\\\\10.0.5.74\\common\\custom";
+        public static string DevServer3 = "\\\\10.0.5.76\\common\\custom";
+        public static string DevServer4 = "\\\\10.0.5.77\\common\\custom";
 
         /**
          * Show the user the options.
@@ -32,9 +35,9 @@ namespace NBS_Custom_JS_And_CSS_Helper
             {
                 // Display the options to the user
                 Console.WriteLine("TYPE THE NUMBER OF YOUR CHOICE AND PRESS ENTER \n" +
-                    "1) Copy new JS and CSS files to all DEV servers.\n" +
-                    "2) Copy new JS and CSS files to all TEST servers.\n" +
-                    "3) Copy new JS and CSS files to all PRODUCTION servers.\n" +
+                    "1) Copy new JS and CSS files from one Dev server to all other DEV servers.\n" +
+                    "2) Copy JS and CSS files from DEV servers to TEST servers.\n" +
+                    "3) Copy JS and CSS files from TEST to PRODUCTION servers.\n" +
                     "4) See the server configurations.\n" +
                     "5) Learn how to use this App.\n");
 
@@ -80,47 +83,18 @@ namespace NBS_Custom_JS_And_CSS_Helper
         }
 
 
+
         /**
-         *  Configures the names of the servers
-         *  
+         * Copies a directory. Method taken from Microsoft Docs: https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-copy-directories
          * */
-        static void ConfigureServers(string Environment)
+        private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs, string Environment)
         {
+
             // Tell the user what we're doing.
             Console.WriteLine("");
             Console.WriteLine($"Moving files to all servers for the {Environment} environment");
             Console.WriteLine("");
 
-            // Configuer the names of the servers based off of the environment
-            switch (Environment)
-            {
-                case "Dev":
-                    /* PROODUCTION SERVER NAMES */
-                    // Note that there are a ton of backslashes because you need two to insert 1
-                    /* 
-                    ServerName1 = "\\\\10.0.5.71\\common\\custom";
-                    ServerName2 = "\\\\10.0.5.74\\common\\custom";
-                    ServerName3 = "\\\\10.0.5.76\\common\\custom";
-                    ServerName4 = "\\\\10.0.5.77\\common\\custom";
-                    */
-
-                    // For tesing, we prompt the user for the directory path
-                    Console.WriteLine("For testing purposes, please provide the first server name");
-                    ServerName1 = Console.ReadLine();
-                    Console.WriteLine($"Server 1 name: {ServerName1}");
-                    Console.WriteLine("For testing purposes, please provide the second server name");
-                    ServerName2 = Console.ReadLine();
-                    break;
-            }
-
-        }
-
-
-        /**
-         * Copies a directory. Method taken from Microsoft Docs: https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-copy-directories
-         * */
-        private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
-        {
             // Get the subdirectories for the specified directory.
             DirectoryInfo dir = new DirectoryInfo(sourceDirName);
 
@@ -140,8 +114,17 @@ namespace NBS_Custom_JS_And_CSS_Helper
             FileInfo[] files = dir.GetFiles();
             foreach (FileInfo file in files)
             {
-                string tempPath = Path.Combine(destDirName, file.Name);
-                file.CopyTo(tempPath, false);
+                try
+                {
+                    string tempPath = Path.Combine(destDirName, file.Name);
+                    file.CopyTo(tempPath, true);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("All other files are being copied over/overwritten...");
+                }
+
             }
 
             // If copying subdirectories, copy them and their contents to new location.
@@ -150,10 +133,34 @@ namespace NBS_Custom_JS_And_CSS_Helper
                 foreach (DirectoryInfo subdir in dirs)
                 {
                     string tempPath = Path.Combine(destDirName, subdir.Name);
-                    DirectoryCopy(subdir.FullName, tempPath, copySubDirs);
+                    DirectoryCopy(subdir.FullName, tempPath, copySubDirs, Environment);
                 }
             }
+            Console.WriteLine("");
+            Console.WriteLine("All servers are now up to date.");
+            Console.WriteLine("");
         }
+
+
+        /**
+         * Show the user the instructions on how to use the app.
+         */
+        static void ShowUserInstructions()
+        {
+            Console.WriteLine("");
+            Console.WriteLine(
+                "This app is meant to aid you in copying custom JavaScript and CSS files to and from different environments and servers.\n" +
+                "First, choose the option needed for you. The options are as follows:\n" +
+                "1) Copy new JS and CSS files from one Dev server to all other DEV servers. - This option copies the JS and CSS files you have manually created\n" +
+                $"in the {DevServer1} server and copies them to the other 3 DEV servers for you.\n" +
+                "2) Copy JS and CSS files from DEV servers to TEST servers. - This option copies the files from the DEV servers to all of the TEST servers.\n" +
+                "3) Copy JS and CSS files from TEST to PRODUCTION servers.  - This option copies the files from the DEV servers to all of the TEST servers.\n" +
+                "4) See the server configurations. - This option shows you the current filepaths the app is pointing to for each server.\n"
+                );
+            Console.WriteLine("");
+
+        }
+
 
 
         /**
@@ -177,23 +184,25 @@ namespace NBS_Custom_JS_And_CSS_Helper
                 switch (WhatUserWantsToDo)
                 {
                     case "1":
-                        ConfigureServers(Environment: "Dev");
-                        //Microsoft docs example: DirectoryCopy(".", @".\temp", true);
-                        // Copy server 1 to server 2
-                        DirectoryCopy(ServerName1, ServerName2, true);
-                        // Call the method again for servers 3 and 4 here...
+                        // Copy contents of server 1 to the other 3 servers
+                        DirectoryCopy(DevServer1, DevServer2, true, Environment: "Dev");
+                        DirectoryCopy(DevServer1, DevServer3, true, Environment: "Dev");
+                        DirectoryCopy(DevServer1, DevServer4, true, Environment: "Dev");
                         break;
                     case "2":
+                        // Copy contents of DEV server 1 to all TEST servers
                         Console.WriteLine("Feature not available");
                         break;
                     case "3":
+                        // Copy contents of TEST server 1 to all PRODUCTION servers
                         Console.WriteLine("Feature not available");
                         break;
                     case "4":
-                        Console.WriteLine("Feature not available");
+                        Console.WriteLine($"The server configurations are as follows... \n" +
+                            $"Dev Servers: {DevServer1}, {DevServer2}, {DevServer3}, and {DevServer4}");
                         break;
                     case "5":
-                        Console.WriteLine("Feature not available");
+                        ShowUserInstructions();
                         break;
                 }
 
