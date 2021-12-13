@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>NBS_Custom_JS_And_CSS_Helper</RootNamespace>
+  </PropertyGroup>
+
+</Project>

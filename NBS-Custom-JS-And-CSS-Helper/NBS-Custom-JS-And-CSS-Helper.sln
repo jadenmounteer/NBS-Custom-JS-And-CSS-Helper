@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBS-Custom-JS-And-CSS-Helper", "NBS-Custom-JS-And-CSS-Helper.csproj", "{BB824A9F-09A1-413D-9119-C8CE1CD5A799}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB824A9F-09A1-413D-9119-C8CE1CD5A799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB824A9F-09A1-413D-9119-C8CE1CD5A799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB824A9F-09A1-413D-9119-C8CE1CD5A799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB824A9F-09A1-413D-9119-C8CE1CD5A799}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53F2EA65-6601-48C4-BF42-6971A979FB82}
+	EndGlobalSection
+EndGlobal
