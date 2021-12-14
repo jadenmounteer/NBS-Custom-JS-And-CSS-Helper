@@ -20,7 +20,7 @@
       "outputPath": "/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/jadenmounteer/.config/NuGet/NuGet.Config"
+        "/Users/jadenmounteer/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

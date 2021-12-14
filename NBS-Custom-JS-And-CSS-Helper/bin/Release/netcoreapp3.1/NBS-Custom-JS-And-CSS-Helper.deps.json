@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "NBS-Custom-JS-And-CSS-Helper/1.0.0": {
+        "runtime": {
+          "NBS-Custom-JS-And-CSS-Helper.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NBS-Custom-JS-And-CSS-Helper/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

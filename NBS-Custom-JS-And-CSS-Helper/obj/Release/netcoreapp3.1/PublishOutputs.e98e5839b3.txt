@@ -1,0 +1,4 @@
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/bin/Release/netcoreapp3.1/publish/NBS-Custom-JS-And-CSS-Helper.dll
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/bin/Release/netcoreapp3.1/publish/NBS-Custom-JS-And-CSS-Helper.deps.json
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/bin/Release/netcoreapp3.1/publish/NBS-Custom-JS-And-CSS-Helper.runtimeconfig.json
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/bin/Release/netcoreapp3.1/publish/NBS-Custom-JS-And-CSS-Helper.pdb

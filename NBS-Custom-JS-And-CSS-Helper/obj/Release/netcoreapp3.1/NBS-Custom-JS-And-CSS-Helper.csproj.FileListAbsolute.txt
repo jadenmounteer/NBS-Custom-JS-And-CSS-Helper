@@ -1,0 +1,13 @@
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/bin/Release/netcoreapp3.1/NBS-Custom-JS-And-CSS-Helper.deps.json
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/bin/Release/netcoreapp3.1/NBS-Custom-JS-And-CSS-Helper.runtimeconfig.json
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/bin/Release/netcoreapp3.1/NBS-Custom-JS-And-CSS-Helper.runtimeconfig.dev.json
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/bin/Release/netcoreapp3.1/NBS-Custom-JS-And-CSS-Helper.dll
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/bin/Release/netcoreapp3.1/NBS-Custom-JS-And-CSS-Helper.pdb
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/obj/Release/netcoreapp3.1/NBS-Custom-JS-And-CSS-Helper.csproj.AssemblyReference.cache
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/obj/Release/netcoreapp3.1/NBS-Custom-JS-And-CSS-Helper.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/obj/Release/netcoreapp3.1/NBS-Custom-JS-And-CSS-Helper.AssemblyInfoInputs.cache
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/obj/Release/netcoreapp3.1/NBS-Custom-JS-And-CSS-Helper.AssemblyInfo.cs
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/obj/Release/netcoreapp3.1/NBS-Custom-JS-And-CSS-Helper.csproj.CoreCompileInputs.cache
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/obj/Release/netcoreapp3.1/NBS-Custom-JS-And-CSS-Helper.dll
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/obj/Release/netcoreapp3.1/NBS-Custom-JS-And-CSS-Helper.pdb
+/Users/jadenmounteer/Documents/Programming Projects/NBS/NBS-Custom-JS-And-CSS-Helper/NBS-Custom-JS-And-CSS-Helper/obj/Release/netcoreapp3.1/NBS-Custom-JS-And-CSS-Helper.genruntimeconfig.cache
