@@ -40,9 +40,10 @@ namespace NBS_Custom_JS_And_CSS_Helper
                     "3) Copy JS and CSS files from TEST to PRODUCTION servers.\n" +
                     "4) See the server configurations.\n" +
                     "5) Learn how to use this App.\n");
-
+                    
                 // Get the user input
                 WhatUserWantsToDo = Console.ReadLine();
+                Console.WriteLine("");
 
                 // Check if the user's input is valid
                 switch (WhatUserWantsToDo)
@@ -92,7 +93,7 @@ namespace NBS_Custom_JS_And_CSS_Helper
 
             // Tell the user what we're doing.
             Console.WriteLine("");
-            Console.WriteLine($"Moving files to all servers for the {Environment} environment");
+            Console.WriteLine($"Moving files to the {destDirName} server in the {Environment} environment...");
             Console.WriteLine("");
 
             // Get the subdirectories for the specified directory.
@@ -136,9 +137,7 @@ namespace NBS_Custom_JS_And_CSS_Helper
                     DirectoryCopy(subdir.FullName, tempPath, copySubDirs, Environment);
                 }
             }
-            Console.WriteLine("");
-            Console.WriteLine("All servers are now up to date.");
-            Console.WriteLine("");
+            
         }
 
 
@@ -188,6 +187,9 @@ namespace NBS_Custom_JS_And_CSS_Helper
                         DirectoryCopy(DevServer1, DevServer2, true, Environment: "Dev");
                         DirectoryCopy(DevServer1, DevServer3, true, Environment: "Dev");
                         DirectoryCopy(DevServer1, DevServer4, true, Environment: "Dev");
+                        Console.WriteLine("");
+                        Console.WriteLine("All Dev servers are now up to date.");
+                        Console.WriteLine("");
                         break;
                     case "2":
                         // Copy contents of DEV server 1 to all TEST servers
