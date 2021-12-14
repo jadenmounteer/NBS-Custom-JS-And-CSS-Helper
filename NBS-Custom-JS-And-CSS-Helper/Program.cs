@@ -91,11 +91,6 @@ namespace NBS_Custom_JS_And_CSS_Helper
         private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs, string Environment)
         {
 
-            // Tell the user what we're doing.
-            Console.WriteLine("");
-            Console.WriteLine($"Moving files to the {destDirName} server in the {Environment} environment...");
-            Console.WriteLine("");
-
             // Get the subdirectories for the specified directory.
             DirectoryInfo dir = new DirectoryInfo(sourceDirName);
 
@@ -184,8 +179,18 @@ namespace NBS_Custom_JS_And_CSS_Helper
                 {
                     case "1":
                         // Copy contents of server 1 to the other 3 servers
+                        // Tell the user what we're doing.
+                        Console.WriteLine("");
+                        Console.WriteLine($"Moving files to the {DevServer2} server in the Dev environment...");
+                        Console.WriteLine("");
                         DirectoryCopy(DevServer1, DevServer2, true, Environment: "Dev");
+                        Console.WriteLine("");
+                        Console.WriteLine($"Moving files to the {DevServer3} server in the Dev environment...");
+                        Console.WriteLine("");
                         DirectoryCopy(DevServer1, DevServer3, true, Environment: "Dev");
+                        Console.WriteLine("");
+                        Console.WriteLine($"Moving files to the {DevServer4} server in the Dev environment...");
+                        Console.WriteLine("");
                         DirectoryCopy(DevServer1, DevServer4, true, Environment: "Dev");
                         Console.WriteLine("");
                         Console.WriteLine("All Dev servers are now up to date.");
